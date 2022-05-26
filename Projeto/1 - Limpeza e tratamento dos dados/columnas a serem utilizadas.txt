@@ -1,0 +1,18 @@
+unitTypes
+usageTypes
+usableAreas
+totalAreas
+bedrooms
+bathrooms
+parkingSpaces
+suites
+address.point.lon
+address.point.lat
+address.zone
+address.neighborhood
+yearlyIptu
+monthlyCondoFee
+price
+
+# Distância para praia usando geopandas
+# Implementar algoritmos diferentes como ensemble
