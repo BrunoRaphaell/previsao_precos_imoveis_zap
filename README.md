@@ -4,6 +4,8 @@
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
+![logo do site zap imóveis. A logo consiste no nome "zap" em letras minúsculas na cor laranja, exceto pela letra "z" que é metade azul e metade laranja](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Zap_im%C3%B3veis_2021.svg/1200px-Zap_im%C3%B3veis_2021.svg.png)
+
 ![](https://invexo.com.br/blog/wp-content/uploads/2020/08/viver-no-rio-de-janeiro-rj.jpg)
 
 ## Resumo
