@@ -12,6 +12,56 @@ O projeto consistiu em tratar uma base de dados retirado do site **[zap imóveis
 
 Para o desenvolvimento do projeto, foi utilizado o **[pandas](https://pandas.pydata.org/)**, **[matplotlib](https://matplotlib.org/)**, **[scikit-learn](https://scikit-learn.org/)** e **[seaborn](https://seaborn.pydata.org/)**
 
+## Organização do projeto
+------------
+
+    ├── LICENSE
+    ├── Makefile           <- Makefile com comandos como `make data` ou `make train`.
+    ├── README.md          <- Informações sobre o projeto.
+    ├── data
+    │   ├── external       <- Dados de fontes de terceiros..
+    │   ├── interim        <- Dados intermediários que foram transformados.
+    │   ├── processed      <- Dados finais para modelagem.
+    │   └── raw            <- Dados originais, imutáveis.
+    │
+    ├── docs               <- Um projeto Sphinx padrão; veja sphinx-doc.org para detalhes.
+    │
+    ├── models             <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos.
+    │
+    ├── notebooks          <- Nobebooks Jupyter.
+    │
+    ├── references         <- Dicionários de dados, manuais e todos os outros materiais explicativos..
+    │
+    ├── reports            <- Análise gerada como HTML, PDF, LaTeX, etc.
+    │   └── figures        <- Gráficos e figuras gerados para serem usados em relatórios
+    │
+    ├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo,
+    │                         gerado com `pip freeze > requirements.txt`
+    │
+    ├── setup.py           <- Torna o projeto pip instalável (pip install -e .) para que o src possa ser importado
+    ├── src                <- Código fonte para uso neste projeto.
+    │   ├── __init__.py    <- Torna src um módulo Python
+    │   │
+    │   ├── data           <- Scripts para baixar ou gerar dados
+    │   │   └── make_dataset.py
+    │   │
+    │   ├── features       <- Scripts para transformar dados brutos em recursos para modelagem
+    │   │   └── build_features.py
+    │   │
+    │   ├── models         <- Scripts para treinar modelos e, em seguida, usar modelos treinados para fazer
+    │   │   │                 predições
+    │   │   ├── predict_model.py
+    │   │   └── train_model.py
+    │   │
+    │   └── visualization  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+    │       └── visualize.py
+    │
+    └── tox.ini            <- arquivo tox com configurações para execução de tox; veja tox.readthedocs.io
+
+
+<p><small>Projeto baseado no <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">template para data scince de cookiecutter</a>.</small></p>
+
+--------
 ### 🔧 Instalação das bibliotecas
 
 Para instalar as bibliotecas utilizadas no projeto é necessário utilizar o comando **pip install** em uma célula do notebook ou no terminal (caso execute no terminal, excluir o ponto de exclamação do comando).
@@ -25,11 +75,11 @@ Para instalar as bibliotecas utilizadas no projeto é necessário utilizar o com
 
 <h2>Base de dados inicial</h2>
 
-A base de dados inicial tratada no primeiro [notebook](https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/Projeto/1%20-%20Limpeza%20e%20tratamento%20dos%20dados/limpeza.ipynb) encontra-se disponível nesse [link](https://drive.google.com/file/d/1av_5fuOYTW95esDRypeAwo4yIBavh2CW/view?usp=sharing). Devido ao seu tamanho não foi possível realizar o upload da base de dados para o GitHub.
+A base de dados inicial, antes de ser tratada no primeiro [notebook](https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/1_Limpando%20a%20base%20de%20dados.ipynb), encontra-se disponível nesse [link](https://drive.google.com/file/d/1av_5fuOYTW95esDRypeAwo4yIBavh2CW/view?usp=sharing). Devido ao seu tamanho não foi possível realizar o upload da base de dados para o GitHub.
 
 <h2>📓 Notebooks:</h2>
 
-<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/Projeto/1%20-%20Limpeza%20e%20tratamento%20dos%20dados/limpeza.ipynb'>1: Limpando a base de dados</a></h3>
+<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/1_Limpando%20a%20base%20de%20dados.ipynb'>1: Limpando a base de dados</a></h3>
 
 Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os dados do zap imóveis. Para esse tratamento foi explorado diversos métodos da biblioteca pandas para tratamento de JSONs. Ao final do tratamento foi gerado um arquivo CSV com os dados que serão utilizados no segundo notebook. Esses dados estão disponíveis nesse [link](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/dados/dados_tratados.csv).
 
@@ -57,7 +107,7 @@ Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os d
 
 `price`: Preço do imóvel. **Variável target**
 
-<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/Projeto/2%20-%20Visualizando%20conjunto%20de%20dados/Visualizando%20e%20tratando%20os%20dados.ipynb'>2: Visualizando e tratando os dados</a></h3>
+<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/2_Visualizando%20e%20tratando%20os%20dados.ipynb'>2: Visualizando e tratando os dados</a></h3>
 
 O segundo notebook consistiu em visualizar os dados da base de dados e tratar os dados para que fossem mais adequados para o desenvolvimento do modelo de regressão. Removeu-se os dados nulos, removeu-se a coluna `totalAreas`, pois possuía uma alta correlação com a `usableArea`, logo para evitar problemas de multicolinearidade optou-se por removê-la. Removeu-se também `latitude` e `longitude` pois a princípio não há a intenção de criar novas *features* com essas variáveis, caso seja necessário, poderá ser feito posteriormente. Após os tratamentos focou-se em construir visualizações para entender melhor os dados:
 
@@ -118,62 +168,4 @@ Após a transformação logarítmica:
 
 Após a construção das visualizações e transformação logarítmica foi transformou-se as variáveis categóricas em dummies e salvou em um novo arquivo CSV, chamado "[dados_OneHotEncoder.csv](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/dados/dados_OneHotEncoder.csv)"
 
-<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/Projeto/3%20-%20Modelos%20de%20ML/criando%20e%20testando%20modelos%20de%20ml.ipynb'>3: criando e testando modelos de ml</a></h3>
-
-house-prices-residential-rj
-==============================
-
-Prevendo preços de imóveis residenciais localizados no Rio de Janeiro - Brasil
-
-Project Organization
-------------
-
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-
-
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/3_criando%20e%20testando%20modelos%20de%20ml.ipynb'>3: criando e testando modelos de ml</a></h3>

@@ -1,0 +1,21 @@
+`usableAreas`: Área utilizável do imóvel. Área construída
+
+`totalAreas`: Área total do imóvel. 
+
+`bedrooms`: Quantidade de quartos.
+
+`bathrooms`: Quantidade de banheiros.
+
+`parkingSpaces`: Quantidade de vagas de estacionamento.
+
+`suites`: Quantidade de suítes.
+
+`longitude`: Longitude do imóvel.
+
+`latitude`: Latitude do imóvel.
+
+`yearlyIptu`: Valor do IPTU anual.
+
+`monthlyCondoFee`: Valor da taxa condominial mensal.
+
+`price`: Preço do imóvel. **Variável target*
