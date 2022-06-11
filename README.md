@@ -19,42 +19,42 @@ Para o desenvolvimento do projeto, foi utilizado o **[pandas](https://pandas.pyd
     ├── Makefile           <- Makefile com comandos como `make data` ou `make train`.
     ├── README.md          <- Informações sobre o projeto.
     ├── data
-    │   ├── external       <- Dados de fontes de terceiros..
-    │   ├── interim        <- Dados intermediários que foram transformados.
-    │   ├── processed      <- Dados finais para modelagem.
-    │   └── raw            <- Dados originais, imutáveis.
+    │   ├── external       <- Dados de fontes de terceiros..
+    │   ├── interim        <- Dados intermediários que foram transformados.
+    │   ├── processed      <- Dados finais para modelagem.
+    │   └── raw            <- Dados originais, imutáveis.
     │
     ├── docs               <- Um projeto Sphinx padrão; veja sphinx-doc.org para detalhes.
     │
     ├── models             <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos.
     │
-    ├── notebooks          <- Nobebooks Jupyter.
+    ├── notebooks          <- Notebooks Jupyter.
     │
     ├── references         <- Dicionários de dados, manuais e todos os outros materiais explicativos..
     │
     ├── reports            <- Análise gerada como HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Gráficos e figuras gerados para serem usados em relatórios
+    │   └── figures        <- Gráficos e figuras gerados para serem usados em relatórios
     │
     ├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo,
     │                         gerado com `pip freeze > requirements.txt`
     │
     ├── setup.py           <- Torna o projeto pip instalável (pip install -e .) para que o src possa ser importado
     ├── src                <- Código fonte para uso neste projeto.
-    │   ├── __init__.py    <- Torna src um módulo Python
+    │   ├── __init__.py    <- Torna src um módulo Python
     │   │
-    │   ├── data           <- Scripts para baixar ou gerar dados
-    │   │   └── make_dataset.py
+    │   ├── data           <- Scripts para baixar ou gerar dados
+    │   │   └── make_dataset.py
     │   │
-    │   ├── features       <- Scripts para transformar dados brutos em recursos para modelagem
-    │   │   └── build_features.py
+    │   ├── features       <- Scripts para transformar dados brutos em recursos para modelagem
+    │   │   └── build_features.py
     │   │
-    │   ├── models         <- Scripts para treinar modelos e, em seguida, usar modelos treinados para fazer
+    │   ├── models         <- Scripts para treinar modelos e, em seguida, usar modelos treinados para fazer
     │   │   │                 predições
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   │   ├── predict_model.py
+    │   │   └── train_model.py
     │   │
-    │   └── visualization  <- Scripts para criar visualizações exploratórias e orientadas a resultados
-    │       └── visualize.py
+    │   └── visualization  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+    │       └── visualize.py
     │
     └── tox.ini            <- arquivo tox com configurações para execução de tox; veja tox.readthedocs.io
 
@@ -81,9 +81,9 @@ A base de dados inicial, antes de ser tratada no primeiro [notebook](https://git
 
 <h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/1_Limpando%20a%20base%20de%20dados.ipynb'>1: Limpando a base de dados</a></h3>
 
-Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os dados do zap imóveis. Para esse tratamento foi explorado diversos métodos da biblioteca pandas para tratamento de JSONs. Ao final do tratamento foi gerado um arquivo CSV com os dados que serão utilizados no segundo notebook. Esses dados estão disponíveis nesse [link](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/dados/dados_tratados.csv).
+Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os dados do zap imóveis. Para esse tratamento foram explorados diversos métodos da biblioteca pandas para tratamento de JSONs. Ao final do tratamento foi gerado um arquivo CSV com os dados que serão utilizados no segundo notebook. Esses dados estão disponíveis nesse [link](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/dados/dados_tratados.csv).
 
-<h4>Dicionário dos dados gerados:</h4>
+<h4><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/references/dic_dados.txt'>Dicionário dos dados:</a></h4>
 
 `usableAreas`: Área utilizável do imóvel. Área construída
 
@@ -109,13 +109,13 @@ Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os d
 
 <h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/2_Visualizando%20e%20tratando%20os%20dados.ipynb'>2: Visualizando e tratando os dados</a></h3>
 
-O segundo notebook consistiu em visualizar os dados da base de dados e tratar os dados para que fossem mais adequados para o desenvolvimento do modelo de regressão. Removeu-se os dados nulos, removeu-se a coluna `totalAreas`, pois possuía uma alta correlação com a `usableArea`, logo para evitar problemas de multicolinearidade optou-se por removê-la. Removeu-se também `latitude` e `longitude` pois a princípio não há a intenção de criar novas *features* com essas variáveis, caso seja necessário, poderá ser feito posteriormente. Após os tratamentos focou-se em construir visualizações para entender melhor os dados:
+O segundo notebook consistiu em visualizar os dados da base de dados e tratar os dados para que fossem mais adequados para o desenvolvimento do modelo de regressão.
 
 <h4>Visualizações variáveis numéricas:</h4>
 
 * Histograma:
 
-<center><img src="https://i.imgur.com/mtzEsMq.png"></center>
+<center><img src="https://i.imgur.com/oIElmvs.png"></center>
 
 Analisando a distribuição da variável target percebemos que é uma curva assimétrica à direita. Estatisticamente temos:
 
@@ -123,29 +123,35 @@ $$Moda < Mediana < média$$
 
 * Boxplot:
 
-<center><img src="https://i.imgur.com/xFAuMH8.png"></center>
+<center><img src="https://i.imgur.com/T8ThCdt.png"></center>
 
-Percebe-se que o boxplot segue a mesma lógica que o histograma, porém aqui fica mais evidente a presença de amostras candidatas a outliers. 
+Percebe-se que o boxplot segue a mesma lógica que o histograma, porém aqui fica mais evidente a presença de amostras candidatas a outliers.,
 
-Vamos analisar como o preço se comporta de acordo com algumas variáveis categóricas:
+Analisando a distribuição do preço por zona:
 
+<center><img src="https://i.imgur.com/sxXFqtA.png"></center>
 
-<center><img src="https://i.imgur.com/bmkavM3.png"></center>
+Analisando a distribuição dos preços dos imóveis por tipo do imóvel:
+
+<center><img src="https://i.imgur.com/mKpJXTw.png"></center>
 
 <h4>Visualizações variáveis categóricas:</h4>
 
 * Barplot: 
 
-<center><img src="https://i.imgur.com/XzQScqW.png"></center>
+<center><img src="https://i.imgur.com/QVdt79D.png"></center>
 
-Percebe-se que há muito mais imoveis de apartamentos para serem vendidos do que qualquer outro tipo. Agora vamos analisar a distribuição do preço médio de cada tipo de imóvel: 
+Percebe-se que há muito mais imóveis de apartamentos para serem vendidos do que qualquer outro tipo. Analisando o preço médio por tipo do imóvel: 
 
-<center><img src="https://i.imgur.com/0SUnMLO.png"></center>
+<center><img src="https://i.imgur.com/JP5TOVy.png"></center>
 
-Pelo gráfico acima podemos perceber que as casas com dois andares são as que apresentam um maior preço médio e o tipo que apresenta menor preço médio é o espaço para estacionamento. Provavelmente é um espaço destinado unicamente para estacionamento, ou está sendo vendido somente a vaga para estacionar, portanto faz total sentido que seja mais barato.
+Quantidade de imóveis por zona:
 
-<center><img src="https://i.imgur.com/TLHsAXM.png"></center>
-<center><img src="https://i.imgur.com/xX4I8yd.png"></center>
+<center><img src="https://i.imgur.com/YkLTwWZ.png"></center>
+
+Preço médio por zona do imóvel:
+
+<center><img src="https://i.imgur.com/9yGKEOr.png"></center>
 
 Pelas imagens acima percebe-se que há uma maior quantidade de imóveis da zona oeste do Rio de Janeiro, porém os imóveis mais caros estão na zona sul. O que faz total sentido pois de acordo com o artigo "[Conheça 13 bairros nobres do RJ e o que tem de mais legal em cada um](https://blog.loft.com.br/bairros-nobres-do-rj/)": 
 
@@ -153,7 +159,7 @@ Pelas imagens acima percebe-se que há uma maior quantidade de imóveis da zona 
 
 <h4>Correlação:</h4>
 
-<center><img src="https://i.imgur.com/VRRUM7C.png"></center>
+<center><img src="https://i.imgur.com/mqdnxUs.png"></center>
 
 Não há variáveis com alta correlação entre si, logo não haverá problemas de multicolinearidade.
 
@@ -164,8 +170,38 @@ Não há variáveis com alta correlação entre si, logo não haverá problemas 
 Após a transformação logarítmica:
 
 <center><img src="https://i.imgur.com/GKlCLDI.png"></center>
-<center><img src="https://i.imgur.com/OLCMw8m.png"></center>
+<center><img src="https://i.imgur.com/1nAXqYj.png"></center>
 
-Após a construção das visualizações e transformação logarítmica foi transformou-se as variáveis categóricas em dummies e salvou em um novo arquivo CSV, chamado "[dados_OneHotEncoder.csv](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/dados/dados_OneHotEncoder.csv)"
+Após a construção das visualizações e transformação logarítmica foi transformou-se as variáveis categóricas em dummies e salvou em um novo arquivo CSV, chamado "[dados_OneHotEncoder.csv](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/data/processed/dados_OneHotEncoder.csv)"
 
 <h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/3_criando%20e%20testando%20modelos%20de%20ml.ipynb'>3: criando e testando modelos de ml</a></h3>
+
+O terceiro notebook consistiu em criar e testar os modelos de regressão. Foram escolhidos os seguintes modelos:
+
+* [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+* [DecisionTreeRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html)
+* [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+* [GradientBoostingRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)
+
+A primeira parte consistiu em testar os modelos e escolher o que apresentasse melhor desempenho com as métricas `MSE`, `RMSE`, `MAE` e `R2` e então realizar o tunning dos hiperparâmetros e obter um modelo ainda melhor. Abaixo está um resumo dos resultados obtidos:
+
+![](https://i.imgur.com/Kmqv7Dp.png)
+
+O modelo escolhido foi [GradientBoostingRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html) e para realizar o tunning dos hyperparametros foi utilizado o [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) e os melhores parâmetros foram obtendo um `mean_test_score` de 0.902027:
+
+```
+{'learning_rate': 0.1,
+ 'max_depth': 8,
+ 'min_samples_split': 4,
+ 'n_estimators': 200}
+```
+
+<h2>💭 Continuação com mlflow</h2>
+
+Para continuar com o desenvolvimento do projeto, foi utilizado o [mlflow](https://mlflow.org/), que está disponível nesse outro repositório "[mlflow_previsao_precos_imoveis_zap](https://github.com/BrunoRaphaell/mlflow_previsao_precos_imoveis_zap)". 
+
+<h2>Autor</h2>
+
+[<img src="https://avatars.githubusercontent.com/u/24321228?v=4" width=115><br><sub>Bruno Raphaell</sub>](https://www.linkedin.com/in/bruno-raphaell-alves-de-matos/) 
+
+
