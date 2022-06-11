@@ -6,13 +6,11 @@
 
 ![](https://invexo.com.br/blog/wp-content/uploads/2020/08/viver-no-rio-de-janeiro-rj.jpg)
 
-## Resumo
+## 📝 Resumo
 
 O projeto consistiu em tratar uma base de dados retirado do site **[zap imóveis](https://www.zapimoveis.com.br/?gclid=CjwKCAjwkMeUBhBuEiwA4hpqEJ-zRtqOKwUjCjzkYA3a1SgjxB6nhAlN_WlG9Q028cVeNAInIH_EuRoCyTgQAvD_BwE&utm_referrer=https%3A%2F%2Fwww.google.com%2F)** referente a imóveis do Rio de Janeiro, construir análises gráficas para entendimento dessa base, desenvolver e avaliar modelos de regressão capazes de prever o preço de imóveis.
 
-Para o desenvolvimento do projeto, foi utilizado o **[pandas](https://pandas.pydata.org/)**, **[matplotlib](https://matplotlib.org/)**, **[scikit-learn](https://scikit-learn.org/)** e **[seaborn](https://seaborn.pydata.org/)**
-
-## Organização do projeto
+## 💻 Organização do projeto
 ------------
 
     ├── LICENSE
@@ -64,7 +62,9 @@ Para o desenvolvimento do projeto, foi utilizado o **[pandas](https://pandas.pyd
 --------
 ### 🔧 Instalação das bibliotecas
 
-Para instalar as bibliotecas utilizadas no projeto é necessário utilizar o comando **pip install** em uma célula do notebook ou no terminal (caso execute no terminal, excluir o ponto de exclamação do comando).
+Para o desenvolvimento do projeto, foram utilizadas bibliotecas como **[pandas](https://pandas.pydata.org/)**, **[matplotlib](https://matplotlib.org/)**, **[scikit-learn](https://scikit-learn.org/)**,  **[seaborn](https://seaborn.pydata.org/)** e **[yellowbrick](https://www.scikit-yb.org/en/latest/)**.
+
+Para instalar das bibliotecas utilizadas no projeto é necessário utilizar o comando **pip install** em uma célula do notebook ou no terminal (caso execute no terminal, excluir o ponto de exclamação do comando).
 
 ```
 !pip install pandas
@@ -200,7 +200,7 @@ O modelo escolhido foi [GradientBoostingRegressor](https://scikit-learn.org/stab
 
 Para continuar com o desenvolvimento do projeto, foi utilizado o [mlflow](https://mlflow.org/), que está disponível nesse outro repositório "[mlflow_previsao_precos_imoveis_zap](https://github.com/BrunoRaphaell/mlflow_previsao_precos_imoveis_zap)". 
 
-<h2>Autor</h2>
+<h2>🧑🏼 Autor</h2>
 
 [<img src="https://avatars.githubusercontent.com/u/24321228?v=4" width=115><br><sub>Bruno Raphaell</sub>](https://www.linkedin.com/in/bruno-raphaell-alves-de-matos/) 
 
