@@ -1,16 +1,31 @@
-<h1 align="center"> Regressão: Prevendo o preço de imóveis do Rio de Janeiro </h1>
-<hr>
+
+# Regressão: Prevendo o preço de imóveis do Rio de Janeiro
+
+Rápida descrição do objetivo de fazer esse projeto
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Prevendo o preço de imóveis do Rio de Janeiro**
+| :label: Tecnologias | Python, scikit-learn, Seaborn, Jupyter Notebook
+| :rocket: URL         | -
+| :fire: Desafio     | -
+
+<!-- Inserir imagem com a #vitrinedev ao final do link -->
+![](https://invexo.com.br/blog/wp-content/uploads/2020/08/viver-no-rio-de-janeiro-rj.jpg)
+
+## Detalhes do projeto
+
 <p>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
-![](https://invexo.com.br/blog/wp-content/uploads/2020/08/viver-no-rio-de-janeiro-rj.jpg)
 
-## 📝 Resumo
+
+### 📝 Resumo
 
 O projeto consistiu em tratar uma base de dados retirado do site **[zap imóveis](https://www.zapimoveis.com.br/?gclid=CjwKCAjwkMeUBhBuEiwA4hpqEJ-zRtqOKwUjCjzkYA3a1SgjxB6nhAlN_WlG9Q028cVeNAInIH_EuRoCyTgQAvD_BwE&utm_referrer=https%3A%2F%2Fwww.google.com%2F)** referente a imóveis do Rio de Janeiro, construir análises gráficas para entendimento dessa base, desenvolver e avaliar modelos de regressão capazes de prever o preço de imóveis.
 
-## 💻 Organização do projeto
+### 💻 Organização do projeto
 ------------
 
     ├── LICENSE
@@ -60,7 +75,7 @@ O projeto consistiu em tratar uma base de dados retirado do site **[zap imóveis
 <p><small>Projeto baseado no <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">template para data scince de cookiecutter</a>.</small></p>
 
 --------
-### 🔧 Instalação das bibliotecas
+#### 🔧 Instalação das bibliotecas
 
 Para o desenvolvimento do projeto, foram utilizadas bibliotecas como **[pandas](https://pandas.pydata.org/)**, **[matplotlib](https://matplotlib.org/)**, **[scikit-learn](https://scikit-learn.org/)**,  **[seaborn](https://seaborn.pydata.org/)** e **[yellowbrick](https://www.scikit-yb.org/en/latest/)**.
 
@@ -73,17 +88,17 @@ Para instalar das bibliotecas utilizadas no projeto é necessário utilizar o co
 !pip install scikit-learn
 ```
 
-<h2>Base de dados inicial</h2>
+<h3>Base de dados inicial</h3>
 
 A base de dados inicial, antes de ser tratada no primeiro [notebook](https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/1_Limpando%20a%20base%20de%20dados.ipynb), encontra-se disponível nesse [link](https://drive.google.com/file/d/1av_5fuOYTW95esDRypeAwo4yIBavh2CW/view?usp=sharing). Devido ao seu tamanho não foi possível realizar o upload da base de dados para o GitHub.
 
-<h2>📓 Notebooks:</h2>
+<h3>📓 Notebooks:</h3>
 
-<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/1_Limpando%20a%20base%20de%20dados.ipynb'>1: Limpando a base de dados</a></h3>
+<h4><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/1_Limpando%20a%20base%20de%20dados.ipynb'>1: Limpando a base de dados</a></h4>
 
 Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os dados do zap imóveis. Para esse tratamento foram explorados diversos métodos da biblioteca pandas para tratamento de JSONs. Ao final do tratamento foi gerado um arquivo CSV com os dados que serão utilizados no segundo notebook. Esses dados estão disponíveis nesse [link](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/dados/dados_tratados.csv).
 
-<h4><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/references/dic_dados.txt'>Dicionário dos dados:</a></h4>
+<h5><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/references/dic_dados.txt'>Dicionário dos dados:</a></h5>
 
 `usableAreas`: Área utilizável do imóvel. Área construída
 
@@ -107,11 +122,11 @@ Esse primeiro notebook consistiu em realizar o tratamento do JSON bruto com os d
 
 `price`: Preço do imóvel. **Variável target**
 
-<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/2_Visualizando%20e%20tratando%20os%20dados.ipynb'>2: Visualizando e tratando os dados</a></h3>
+<h4><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/2_Visualizando%20e%20tratando%20os%20dados.ipynb'>2: Visualizando e tratando os dados</a></h4>
 
 O segundo notebook consistiu em visualizar os dados da base de dados e tratar os dados para que fossem mais adequados para o desenvolvimento do modelo de regressão.
 
-<h4>Visualizações variáveis numéricas:</h4>
+<h5>Visualizações variáveis numéricas:</h5>
 
 * Histograma:
 
@@ -157,13 +172,13 @@ Pelas imagens acima percebe-se que há uma maior quantidade de imóveis da zona 
 
 > Não é à toa que cinco dos bairros mais caros do país estão localizados na Zona Sul carioca, sendo eles o Leblon, Ipanema, Lagoa, Gávea e Jardim Botânico.
 
-<h4>Correlação:</h4>
+<h5>Correlação:</h5>
 
 <center><img src="https://i.imgur.com/mqdnxUs.png"></center>
 
 Não há variáveis com alta correlação entre si, logo não haverá problemas de multicolinearidade.
 
-<h4>Relação das variáveis com a variável target:</h4>
+<h5>Relação das variáveis com a variável target:</h5>
 
 <center><img src="https://i.imgur.com/p5PZeaF.png"></center>
 
@@ -174,7 +189,7 @@ Após a transformação logarítmica:
 
 Após a construção das visualizações e transformação logarítmica foi transformou-se as variáveis categóricas em dummies e salvou em um novo arquivo CSV, chamado "[dados_OneHotEncoder.csv](https://raw.githubusercontent.com/BrunoRaphaell/previsao_precos_imoveis_zap/master/data/processed/dados_OneHotEncoder.csv)"
 
-<h3><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/3_criando%20e%20testando%20modelos%20de%20ml.ipynb'>3: criando e testando modelos de ml</a></h3>
+<h4><a href='https://github.com/BrunoRaphaell/previsao_precos_imoveis_zap/blob/master/notebooks/3_criando%20e%20testando%20modelos%20de%20ml.ipynb'>3: criando e testando modelos de ml</a></h5>
 
 O terceiro notebook consistiu em criar e testar os modelos de regressão. Foram escolhidos os seguintes modelos:
 
@@ -196,11 +211,11 @@ O modelo escolhido foi [GradientBoostingRegressor](https://scikit-learn.org/stab
  'n_estimators': 200}
 ```
 
-<h2>💭 Continuação com mlflow</h2>
+<h3>💭 Continuação com mlflow</h3>
 
 Para continuar com o desenvolvimento do projeto, foi utilizado o [mlflow](https://mlflow.org/), que está disponível nesse outro repositório "[mlflow_previsao_precos_imoveis_zap](https://github.com/BrunoRaphaell/mlflow_previsao_precos_imoveis_zap)". 
 
-<h2>🧑🏼 Autor</h2>
+<h3>🧑🏼 Autor</h3>
 
 [<img src="https://avatars.githubusercontent.com/u/24321228?v=4" width=115><br><sub>Bruno Raphaell</sub>](https://www.linkedin.com/in/bruno-raphaell-alves-de-matos/) 
 
