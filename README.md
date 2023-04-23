@@ -11,7 +11,7 @@ Rápida descrição do objetivo de fazer esse projeto
 | :fire: Desafio     | -
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![](https://invexo.com.br/blog/wp-content/uploads/2020/08/viver-no-rio-de-janeiro-rj.jpg)
+![](https://invexo.com.br/blog/wp-content/uploads/2020/08/viver-no-rio-de-janeiro-rj.jpg#vitrinedev)
 
 ## Detalhes do projeto
 
